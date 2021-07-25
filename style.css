@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    scroll-behavior: smooth;
+}
+.logo{
+    height: 60px;
+    line-height: 60px;
+    color: crimson;
+    font-size: 2em;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 20px;
+}
+#toggle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: crimson;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#toggle::before{
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(-5px);
+    transition: all ease-in 0.3s;
+}
+#toggle::after{
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(5px);
+    transition: all ease-in 0.3s;
+}
+#toggle.active::before{
+    transform: translate(0px) rotate(45deg);
+}
+#toggle.active::after{
+    transform: translate(0px) rotate(-45deg);
+}
+#toggle.active{
+    background: rgba(20, 143, 9, 0.836);
+}
+#navbar{
+    position: relative;
+    height: 60px;
+    right: 60px;
+    background: rgb(255, 255, 255);
+    transition: 0.3s;
+    width: 0;
+    overflow: hidden;
+}
+#navbar.active{
+    width: 520px;
+}
+#navbar ul{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+#navbar ul li{
+    display: inline-block;
+    list-style: none;
+    padding-left: 10px;
+}
+#navbar ul li a{
+    color: #010503;
+    font-size: 1.3em;
+    font-weight: 400;
+    text-decoration: none;
+    height: 60px;
+    line-height: 60px;
+    letter-spacing: 2px;
+    transition: all 0.2s ease-in;
+    padding: 5px;
+    border-radius: 5px;
+}
+#navbar ul li a:hover{
+    background: crimson;
+    color: #fff;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    background-color: darkgoldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    font-weight: bold;
+    color: rgb(97, 90, 90);
+}
+#Home{
+    background: url(Bg1.jpeg) no-repeat center center;
+}
+#About{
+    background: crimson;
+}
+#Portfolio{
+    background: green;
+}
+#Services{
+    background: rgba(25, 28, 219, 0.774);
+}
+#Contact-Us{
+    background: #8f117e;
+}
+/*Responsive */
+
+@media (max-width:786px){
+    #navbar{
+        position: fixed;
+        bottom: -100%;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* top: 60px; */
+        height: calc(100vh - 60px);
+    }
+    #navbar ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #navbar.active{
+        height: calc(100vh - 60px);
+        bottom: 0;
+        width: 100%;
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResponsiveNavbar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header" id="header">
+        <a href="#" class="logo">Navbar</a>
+        <div id="toggle"></div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Portfolio">Portfolio</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#Contact-Us">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section id="Home">Home</section>
+    <section id="About">About</section>
+    <section id="Portfolio">Portfolio</section>
+    <section id="Services">Services</section>
+    <section id="Contact-Us">Contact Us</section>
+    
+
+    <!-- scripting -->
+
+    <script>
+        const header = document.getElementById('header');
+        const toggle= document.getElementById('toggle');
+        const navbar= document.getElementById('navbar');
+
+
+        document.onclick= function(event){
+            if(event.target.id !=='header' && event.target.id !=='toggle' && event.target.id !=='navbar'){
+                toggle.classList.remove('active');
+                navbar.classList.remove('active');
+            }
+        }
+
+        toggle.onclick=function(){
+            toggle.classList.toggle('active');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
